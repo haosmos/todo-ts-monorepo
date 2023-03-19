@@ -1,0 +1,49 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"rules": {
+		"semi": "off",
+		"no-console": "off",
+		"no-empty-function": "off",
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/semi": [
+			"warn"
+		],
+		"@typescript-eslint/indent": "off",
+		"comma-dangle": "off",
+		"arrow-parens": "off",
+		"arrow-body-style": "off",
+		"@typescript-eslint/comma-dangle": "off",
+		"react/jsx-indent-props": "off",
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": 2,
+		"react/jsx-props-no-spreading": "off",
+		"@typescript-eslint/no-empty-interface": [
+			"error",
+			{
+				"allowSingleExtends": true
+			}
+		],
+		"object-curly-newline": "off",
+		"import/prefer-default-export": "off",
+		"no-trailing-spaces": "off"
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react-hooks/recommended",
+		"airbnb",
+		"airbnb-typescript"
+	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"ignorePatterns": [
+		"next.config.js"
+	]
+}

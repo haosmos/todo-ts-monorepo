@@ -6,8 +6,16 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.ts",
-    "build": "nodemon index.ts",
-    "start": "node dist/index.js"
+    "build": "ts-node-esm index.ts",
+    "start": "node dist/index.js",
+  
+    "install-dependencies": "pnpm run install-client && pnpm install",
+    "setup-production": "pnpm run install-client && pnpm run build-client && pnpm install",
+    "install-client": "cd client && pnpm install",
+    "build-client": "cd client && pnpm run build",
+    "server": "nodemon index --ignore client",
+    "client": "pnpm start --prefix client",
+    "start:dev": "concurrently --kill-others-on-fail \" pnpm run server\" \" pnpm run client\""
   },
   "keywords": [],
   "author": "",
@@ -31,6 +39,7 @@
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
+    "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.4",
